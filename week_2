@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <cs50.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+//argc = num of strings in argv
+//argv = array of strings waiting to get input
+int main(int argc, string argv[])
+{
+  if (argc != 2)
+      return 1;
+
+  //atoi function converts argv to int
+  //k represents k to shift letters
+  int key = atoi(argv[1]);
+
+  printf("Please type in a sentence:\n\n");
+  string sentence;
+  sentence = GetString();
+
+  if(isalpha(sentence))
+  {
+
+      for (int i = 0, n = strlen(sentence); i < n; i++)
+          {
+           printf("This is the original letter, %c", sentence[i]);
+           int result = (key + sentence[i]);
+           printf("This is the crypted letter for, %c", result);
+          }
+
+  }
+  else
+  {
+      printf("Please type a sentence with letters only!");
+  }
+  return 0;
+}
